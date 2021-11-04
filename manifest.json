@@ -1,8 +1,8 @@
 {
-  "name": "AESR Configuration Sender",
+  "name": "Jarvis Configuration Sender",
   "version": "0.0.1",
-  "description": "Config sender example",
-  "short_name": "AESR Sender",
+  "description": "This extension pushes information into AWS Switch Roles",
+  "short_name": "Jarvis AWS Sender",
   "background": {
     "scripts": [
       "js/background.js"
