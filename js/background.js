@@ -1,40 +1,31 @@
 const jarvisExtensionId = "jpmkfafbacpgapdghgdpembnojdlgkdl";
 const url = "https://aws-resource-finder-api.corp.ipsy.com/v0/account"
+
 fetch(url).then(function(response) {
   return response.json();
 }).then(function(data) {
+  console.log("data");
   console.log(data);
+  updateConfig(data)
 }).catch(function() {
   console.log("Booo");
 });
 
-const rawIniStr = `
-[profile marketingadmin]
-role_arn = arn:aws:iam::123456789012:role/marketingadmin
-color = ffaaee
+function updateConfig(accounts) {
+    let config = ""
+    console.log(accounts)
+    accounts.forEach(function(account) {
+        data = account.data
+        config += `\n\n[${data.profile_name}]\n`
+        config += `role_arn=arn:aws:iam::${data.id}:role/PowerUserAccess\n`
+        config += `region=us-east-1\n`
+    })
 
-[anotheraccount]
-aws_account_id = 987654321987
-role_name = anotherrole
-region=ap-northeast-1
-
-[athirdaccount]
-aws_account_id = 987654321988
-role_name = athirdrole
-image = "https://via.placeholder.com/150"
-`;
-
-chrome.runtime.sendMessage(jarvisExtensionId, {
-  action: 'updateConfig',
-  dataType: 'ini',
-  data: rawIniStr
-}, function(response) {
-  console.log(response)
-});
-
-
-async function fetchAsync (url) {
-  let response = await fetch(url);
-  let data = await response.json();
-  return data;
+    chrome.runtime.sendMessage(jarvisExtensionId, {
+      action: 'updateConfig',
+      dataType: 'ini',
+      data: config
+    }, function(response) {
+      console.log(response)
+    });
 }
