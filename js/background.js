@@ -1,5 +1,6 @@
 const jarvisExtensionId = "jpmkfafbacpgapdghgdpembnojdlgkdl";
-const url = "https://aws-resource-finder-api.corp.ipsy.com/v0/account"
+const url = localStorage["jarvisUrl"]
+const awsRoleName = localStorage["awsRoleName"]
 
 fetch(url).then(function(response) {
   return response.json();
@@ -17,7 +18,7 @@ function updateConfig(accounts) {
     accounts.forEach(function(account) {
         data = account.data
         config += `\n\n[${data.profile_name}]\n`
-        config += `role_arn=arn:aws:iam::${data.id}:role/PowerUserAccess\n`
+        config += `role_arn=arn:aws:iam::${data.id}:role/${awsRoleName}\n`
         config += `region=us-east-1\n`
     })
 

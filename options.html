@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>AESR Config Sender</title>
+<title>Jarvis Config Sender</title>
 <script src="js/options.js"></script>
 <style>
 html { padding: 0 }
@@ -53,17 +53,6 @@ a { text-decoration: none }
   position: relative;
   top: 2px;
 }
-#awsConfigTextArea {
-  box-sizing: border-box;
-  font-size: 14px;
-  font-family: Consolas, "Courier New", Courier, Monaco, monospace;
-  padding: 0.5ex;
-  resize: none;
-  white-space: pre;
-  width: 100%;
-  height: calc(100vh - 400px);
-  max-height: 800px;
-}
 pre {
   border: 1px solid #484848;
   box-sizing: border-box;
@@ -82,17 +71,22 @@ code {
 <div class="pane" id="settingPane">
  <section>
   <h1>Configuration</h1>
-  <textarea id="awsConfigTextArea" spellcheck="false"></textarea>
+  <section id="api">
+   <h1>Jarvis API</h1>
+   <div>
+    <label>Jarvis URL:</label>
+    <input id="jarvisAPI" type="text" maxlength="200" style="width: 48ex">
+   </div>
+  </section>
+  <section id="defaultRole">
+   <h1>Default Role</h1>
+   <div>
+    <label>AWS Role name:</label>
+    <input id="awsRoleName" type="text" maxlength="48" style="width: 48ex">
+   </div>
+  </section>
   <div style="margin-top:12px">
-   <button id="saveButton">&nbsp; Send to AESR &nbsp;</button>
-   <span id="msgSpan" style="margin-left:12px"></span>
-  </div>
- </section>
- <section id="api">
-  <h1>Extension API</h1>
-  <div>
-   <label for="aesrIdText">AESR extension ID:</label>
-   <input id="aesrIdText" type="text" maxlength="48" style="width: 48ex">
+   <button id="saveButton">&nbspSave</button>
   </div>
  </section>
 </div>
