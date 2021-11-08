@@ -9,9 +9,9 @@
     ],
     "persistent": false
   },
-  "options_ui": {
-    "page": "options.html",
-    "open_in_tab": true
+  "browser_action": {
+    "default_title": "Jarvis AWS Config tool",
+    "default_popup": "options.html"
   },
   "manifest_version": 2
 }

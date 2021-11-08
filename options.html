@@ -17,7 +17,7 @@ body {
 }
 .pane {
   box-sizing: border-box;
-  height: 100vh;
+  height: 350px;
   max-width: 660px;
   width: 100%;
   padding: 10px 20px;
@@ -71,22 +71,26 @@ code {
 <div class="pane" id="settingPane">
  <section>
   <h1>Configuration</h1>
-  <section id="api">
-   <h1>Jarvis API</h1>
+  <section id="aesrId">
+   <h1>AWS Switch Role Extension</h1>
    <div>
-    <label>Jarvis URL:</label>
-    <input id="jarvisAPI" type="text" maxlength="200" style="width: 48ex">
+    <input id="extensionId" type="text" maxlength="200" style="width: 48ex">
    </div>
   </section>
   <section id="defaultRole">
-   <h1>Default Role</h1>
+   <h1>AWS Role</h1>
    <div>
-    <label>AWS Role name:</label>
     <input id="awsRoleName" type="text" maxlength="48" style="width: 48ex">
    </div>
   </section>
+  <section id="api">
+   <h1>Jarvis API</h1>
+   <div>
+    <input id="jarvisAPI" type="text" maxlength="200" style="width: 48ex">
+   </div>
+  </section>
   <div style="margin-top:12px">
-   <button id="saveButton">&nbspSave</button>
+   <button id="updateButton">&nbspUpdate</button>
   </div>
  </section>
 </div>
