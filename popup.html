@@ -1,0 +1,116 @@
+<html>
+<head>
+    <style>
+        * { box-sizing: border-box }
+        html { padding: 0 }
+        body {
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Arial, Meiryo, sans-serif;
+            max-width: 600px;
+            max-height: 600px;
+        }
+        .optionMenu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .optionMenu li {
+            padding: 0;
+            margin: 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .optionMenu a {
+            color: #000;
+            display: block;
+            font-size: 13px;
+            line-height: 2;
+            margin: 2px;
+            padding: 2px 14px;
+            text-decoration: none;
+            width: 9em;
+        }
+        a:hover {
+            background-color: #e8fafa;
+        }
+
+        .mainPane {
+            border-right: 1px solid #ddd;
+            padding-left: 10px;
+            margin-right: 4px;
+            padding-right: 10px;
+        }
+        #roleList li {
+            padding: 0;
+            margin: 4px 10px 4px 2px;
+            list-style: none;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+        #roleList li a {
+            color: #000;
+            font-family: Arial;
+            cursor: pointer;
+            display: block;
+            line-height: 29px;
+            text-decoration: none;
+        }
+        #roleList li a > * {
+            vertical-align: top;
+        }
+        #noMain p {
+            font-size: 12px;
+            margin: 12px 5px 5px 5px;
+            line-height: 1.66;
+        }
+        #supportComment p {
+            line-height: 1.25;
+            margin: .5em 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div style="display: flex">
+    <div class="mainPane" style="min-width: 280px; min-height: 280px">
+        <section>
+            <h1>Configuration</h1>
+            <section id="aesrId">
+                <h1>AWS Switch Role Extension</h1>
+                <div>
+                    <input id="extensionId" type="text" maxlength="200" style="width: 48ex">
+                </div>
+            </section>
+            <section id="defaultRole">
+                <h1>AWS Role</h1>
+                <div>
+                    <input id="awsRoleName" type="text" maxlength="48" style="width: 48ex">
+                </div>
+            </section>
+            <section id="api">
+                <h1>Jarvis API</h1>
+                <div>
+                    <input id="jarvisAPI" type="text" maxlength="200" style="width: 48ex">
+                </div>
+            </section>
+            <div style="margin-top:12px">
+                <button id="updateButton">&nbspUpdate</button>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <h1>Options</h1>
+            <ul class="optionMenu">
+                <li><a
+                        href="https://jarvis.corp.ipsy.com/dashboards/accounts" rel="noopener noreferrer" target="_blank">Web</a></li>
+            </ul>
+        </section>
+    </div>
+</div>
+<script src="js/popup.js"></script>
+<div id="sandbox" style="display: none;"></div>
+</body>
+</head>
+</html>
